@@ -7,6 +7,7 @@ public class Place {
     //fiels
     private int placeId;
     private int plaseNumber;
-    private int placeDtatus; //0 - пусто,1 - бронь,2 - купили
+    private int placeDtatus; //0 - пусто,1 - бронь,2 - купили хнатить значения полей в БД
+    private int plaseType; //0 - партер, 1 - ложа, 2 - балкон
 
 }
