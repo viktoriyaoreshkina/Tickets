@@ -9,7 +9,5 @@ import static java.lang.Math.pow;
 
 
 public class Role {
-    public static void main(String[] args) {
-        int a = pow(2,4);
-    }
+
 }
