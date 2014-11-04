@@ -3,88 +3,86 @@ package epam.tickets;
 /**
  * Created by Viktoriya_Oreshkina on 31-Oct-14.
  */
-public class User extends SearchField{ //This method save user's methods //странное наследование
+public class User { //This method save user's methods
 
     //fields
-    protected String login = '';
-    protected String pass = '';
-    protected String role = '';
-    private String email = '';
+    private String login;
+    private String pass;
+    private String role;
+    private String email;
 
     //methods itself
     //for Ticket
-    public createTicket(){ //create and save
+    public User(){}
+
+    private void createTicket(){ //create and save
 
     }
 
-    public buyTicket(){
+    public void buyTicket(){
 
     }
 
-    public reservTicket(){
+    public void reservTicket(){
 
     }
 
-    public delTicket(){
+    public void delTicket(){
 
     }
 
-    public editReservTicket(){
+    public void editReservTicket(){
 
     }
 
-    public delReservTicket(){
+    public void delReservTicket(){
 
     }
 
-    public editBuyTicket(){
+    public void editBuyTicket(){
 
     }
 
-    public delBuyTicket(){
+    public void delBuyTicket(){
 
     }
 
-    //for Measure
-    public createMeasure(){
+    //for Event
+    public void createEvent(){
 
     }
 
-    public editMeasure(){
+    public void editEvent(){
 
     }
 
-    public delMeasure(){
+    public void delEvent(){
 
     }
 
     //for Order
-    public createOrder(){
+    public void createOrder(){
 
     }
 
-    public editOrder(){
+    public void editOrder(){
 
     }
 
-    public delOrder(){
+    public void delOrder(){
 
     }
-
-    //methods caused
-    SearchMethod SearMeth = new SearchMethod(String search)
-
 
     // content control methods
-    public createText(){ //пока Text, может быть стоит потом назвать точнее
+    public void createText(){ //пока Text, может быть стоит потом назвать точнее
 
     }
 
-    public editText(){
+    public void editText(){
 
     }
 
-    public delText(){
+    public void delText(){
 
     }
 
