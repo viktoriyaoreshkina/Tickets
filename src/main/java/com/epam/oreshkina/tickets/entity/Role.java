@@ -10,4 +10,15 @@ import static java.lang.Math.pow;
 
 public class Role {
 
+    //fields
+    private int roleId;
+    private int roleType;
+
+    public int getRoleType() {
+        return roleType;
+    }
+
+    public void setRoleType(int roleType) {
+        this.roleType = roleType;
+    }
 }
