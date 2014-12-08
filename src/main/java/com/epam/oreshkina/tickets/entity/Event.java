@@ -1,9 +1,7 @@
 package com.epam.oreshkina.tickets.entity;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,34 +12,20 @@ public class Event {
     private int id;
     private String name;
     private String address;
-    private Date date;
-    private LocalDateTime dateTime;
+    //private Date date;
+   // private LocalDateTime dateTime;
+    private String date;
+    private String dateTime;
     private List<Seat> seatList;
-    private boolean active;
+    //private boolean active;
 
-    public Event() {
-    }
 
-    public Event(int id) {
+    public Event(int id, String name, String address, String date, String dateTime, List<Seat> seatList) {
         this.id = id;
-    }
-
-    public List<Seat> getSeatList() {
-        return seatList;
-    }
-
-    public List<Seat> getFreeSeatList() {
-        List<Seat> freeSeatList = new ArrayList<Seat>();
-        for (Seat seat : seatList) {
-            if (seat.getStatus() == Seat.Status.FREE) {
-                freeSeatList.add(seat);
-            }
-        }
-        Collections.sort(freeSeatList, Seat.PRICE_COMPARATOR);
-        return freeSeatList;
-    }
-
-    public void setSeatList(List<Seat> seatList) {
+        this.name = name;
+        this.address = address;
+        this.date = date;
+        this.dateTime = dateTime;
         this.seatList = seatList;
     }
 
@@ -69,19 +53,40 @@ public class Event {
         this.address = address;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public boolean isActive() {
-        return active;
+    public String getDateTime() {
+        return dateTime;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
     }
+
+    public List<Seat> getSeatList() {
+        return seatList;
+    }
+
+    public void setSeatList(List<Seat> seatList) {
+        this.seatList = seatList;
+    }
+
+    public List<Seat> getFreeSeatList() {
+        List<Seat> freeSeatList = new ArrayList<Seat>();
+        for (Seat seat : seatList) {
+            if (seat.getStatus() == Seat.Status.FREE) {
+                freeSeatList.add(seat);
+            }
+        }
+        Collections.sort(freeSeatList, Seat.PRICE_COMPARATOR);
+        return freeSeatList;
+    }
+
+
 }
