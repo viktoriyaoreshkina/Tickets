@@ -1,44 +1,87 @@
-package epam.tickets;
+package com.epam.oreshkina.tickets.entity;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 /**
- * Created by Viktoriya_Oreshkina on 28-Oct-14.
+ * Created on 28-Oct-14.
  */
 public class Event {
     //fieds
-    private int eventId;
-    private String eventName;
-    private String eventAddress;
-    private Date eventDate;
-    private String ticketAmount;
-    private boolean eventTrue;
+    private int id;
+    private String name;
+    private String address;
+    private Date date;
+    private LocalDateTime dateTime;
+    private List<Seat> seatList;
+    private boolean active;
 
-    public String getEventName() {
-        return eventName;
-    }
-    public void setEventName(String eventName) {
-        this.eventName = eventName;
+    public Event() {
     }
 
-    public String getEventAddress() {
-        return eventAddress;
-    }
-    public void setEventAddress(String eventAddress) {
-        this.eventAddress = eventAddress;
+    public Event(int id) {
+        this.id = id;
     }
 
-    public Date getEventDate() {
-        return eventDate;
-    }
-    public void setEventDate(Date eventDate) {
-        this.eventDate = eventDate;
+    public List<Seat> getSeatList() {
+        return seatList;
     }
 
-    public String getTicketAmount() {
-        return ticketAmount;
+    public List<Seat> getFreeSeatList() {
+        List<Seat> freeSeatList = new ArrayList<Seat>();
+        for (Seat seat : seatList) {
+            if (seat.getStatus() == Seat.Status.FREE) {
+                freeSeatList.add(seat);
+            }
+        }
+        Collections.sort(freeSeatList, Seat.PRICE_COMPARATOR);
+        return freeSeatList;
     }
-    public void setTicketAmount(String ticketAmount) {
-        this.ticketAmount = ticketAmount;
+
+    public void setSeatList(List<Seat> seatList) {
+        this.seatList = seatList;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

@@ -1,6 +1,4 @@
-package epam.tickets;
-
-import static java.lang.Math.pow;
+package com.epam.oreshkina.tickets.entity;
 
 /**
  * Created by Viktoriya_Oreshkina on 28-Oct-14.
@@ -10,15 +8,26 @@ import static java.lang.Math.pow;
 
 public class Role {
 
-    //fields
-    private int roleId;
-    private int roleType;
+    private int id;
+    private int type;
 
-    public int getRoleType() {
-        return roleType;
+    public enum Type {
+        CLIENT, SELLER, ADMIN
     }
 
-    public void setRoleType(int roleType) {
-        this.roleType = roleType;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }

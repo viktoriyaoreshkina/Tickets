@@ -1,4 +1,4 @@
-package epam.tickets;
+package com.epam.oreshkina.tickets.entity;
 
 /**
  * Created by Viktoriya_Oreshkina on 31-Oct-14.
@@ -9,7 +9,7 @@ public class User { //This method save user's methods
     private int userId;
     private String login;
     private String pass;
-    private String role;
+    private Role role;
     private String email;
 
     public String getLogin() {
@@ -26,12 +26,8 @@ public class User { //This method save user's methods
         this.pass = pass;
     }
 
-    public String getRole() {
-        return role;
-    }
-    public void setRole(String role) {
-        this.role = role;
-    }
+    public Role getRole() {return role;}
+    public void setRole(Role role) {this.role = role;}
 
     public String getEmail() {
         return email;
