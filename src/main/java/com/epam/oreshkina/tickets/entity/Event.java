@@ -1,9 +1,5 @@
 package com.epam.oreshkina.tickets.entity;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 /**
  * Created on 28-Oct-14.
  */
@@ -16,17 +12,17 @@ public class Event {
    // private LocalDateTime dateTime;
     private String date;
     private String dateTime;
-    private List<Seat> seatList;
+  /*  private List<Seat> seatList;*/ private Seat seat;
     //private boolean active;
 
 
-    public Event(int id, String name, String address, String date, String dateTime, List<Seat> seatList) {
+    public Event(int id, String name, String address, String date, String dateTime, Seat seat) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.date = date;
         this.dateTime = dateTime;
-        this.seatList = seatList;
+        this.seat = seat;
     }
 
     public int getId() {
@@ -69,15 +65,15 @@ public class Event {
         this.dateTime = dateTime;
     }
 
-    public List<Seat> getSeatList() {
-        return seatList;
+    public Seat getSeat() {
+        return seat;
     }
 
-    public void setSeatList(List<Seat> seatList) {
-        this.seatList = seatList;
+    public void setSeat(Seat seat) {
+        this.seat = seat;
     }
 
-    public List<Seat> getFreeSeatList() {
+/*   public List<Seat> getFreeSeatList() {
         List<Seat> freeSeatList = new ArrayList<Seat>();
         for (Seat seat : seatList) {
             if (seat.getStatus() == Seat.Status.FREE) {
@@ -86,7 +82,7 @@ public class Event {
         }
         Collections.sort(freeSeatList, Seat.PRICE_COMPARATOR);
         return freeSeatList;
-    }
+    }*/
 
 
 }
