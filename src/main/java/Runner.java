@@ -5,21 +5,26 @@ import com.epam.oreshkina.tickets.entity.Seat;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by Viktoriya_Oreshkina on 30-Oct-14.
  */
 public class Runner {
-   // private static final Logger logger = Logger.getLogger(Runner.class); //чаще всего оно так - имя поля бывает разным - LOGGER logger log итд
+    private static final Logger logger = Logger.getLogger("Runner.class"); //чаще всего оно так - имя поля бывает разным - LOGGER logger log итд
+
 
     public static void main(String[] args) {
+
         OutputStream os = null;
         try {
+
 //create object
             Seat seat1 = new Seat(1,2,45,"FREE","PARTERRE",1500);
             Event event1 = new Event(1, "organ", "Lenin street", "01.01.2014", "14:30", seat1);
@@ -43,6 +48,22 @@ public class Runner {
         } catch (JAXBException ex) {
             java.util.logging.Logger.getLogger(Runner.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+// Demarshaling
+        try {
+            File xmlFile = new File("concert.xml");
+            JAXBContext context = JAXBContext.newInstance(PlaceEvent.class);
+            Unmarshaller u = context.createUnmarshaller();
+            PlaceEvent placeEvent = (PlaceEvent) u.unmarshal(xmlFile);
+            System.out.println(placeEvent.getEvent1().getAddress());
+            System.out.println(placeEvent.getEvent2().getSeat().getCost());
+
+
+        } catch (JAXBException ex) {
+            Logger.getLogger(Runner.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }
 
 

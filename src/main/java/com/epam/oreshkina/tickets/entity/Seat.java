@@ -6,6 +6,7 @@ import java.util.Comparator;
  * Created on 04-Nov-14.
  */
 public class Seat {
+    Seat(){};
     public static final Comparator PRICE_COMPARATOR = new PriceComparator();
 
     public enum Type {

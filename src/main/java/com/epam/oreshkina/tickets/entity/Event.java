@@ -4,6 +4,9 @@ package com.epam.oreshkina.tickets.entity;
  * Created on 28-Oct-14.
  */
 public class Event {
+
+    Event(){};
+
     //fieds
     private int id;
     private String name;
